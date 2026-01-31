@@ -22,7 +22,12 @@ redisClient.connect().then(()=>console.log("Connected to Redis")).catch(console.
 
 const app = express()
 
-app.use(cors())
+app.use(cors({
+    origin: 'https://music-streaming-platform-cyan.vercel.app',
+    credentials: true
+}))
+
+app.use(express.json())
 
 const port = process.env.PORT
 
