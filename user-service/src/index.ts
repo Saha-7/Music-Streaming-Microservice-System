@@ -23,7 +23,11 @@ const app=express()
 
 
 app.use(cors({
-    origin: 'https://music-streaming-platform-cyan.vercel.app',
+    origin: [
+        'https://music-streaming-platform-cyan.vercel.app',
+        'https://music-streaming-platform-git-main-saha7s-projects.vercel.app',
+        /^https:\/\/music-streaming-platform-.*\.vercel\.app$/ // Matches ALL preview deployments
+    ],
     credentials: true
 }))
 
