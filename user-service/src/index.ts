@@ -23,7 +23,12 @@ const app=express()
 
 app.use(express.json())
 
-app.use(cors())
+app.use(cors({
+    origin: 'https://music-streaming-platform-cyan.vercel.app',
+    credentials: true
+}))
+
+app.use(express.json())
 
 app.use("/api/v1", userRouter)
 
